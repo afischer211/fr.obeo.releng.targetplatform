@@ -28,6 +28,7 @@ public class TargetPlatformFormatter extends AbstractDeclarativeFormatter {
   @Extension
   private TargetPlatformGrammarAccess _targetPlatformGrammarAccess;
   
+  @Override
   protected void configureFormatting(final FormattingConfig c) {
     List<Pair<Keyword, Keyword>> _findKeywordPairs = this._targetPlatformGrammarAccess.findKeywordPairs("{", "}");
     for (final Pair<Keyword, Keyword> pair : _findKeywordPairs) {

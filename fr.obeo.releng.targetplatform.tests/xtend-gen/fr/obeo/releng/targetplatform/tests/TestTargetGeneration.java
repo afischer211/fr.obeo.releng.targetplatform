@@ -101,6 +101,7 @@ public class TestTargetGeneration {
       final TargetPlatform tp1 = this.parser.parse(_builder);
       final ResolvedTargetPlatform resolvedTargetPlatform = ResolvedTargetPlatform.create(tp1, this.indexBuilder);
       MockMetadataRepositoryManager _mockMetadataRepositoryManager = new MockMetadataRepositoryManager(new IQueryResultProvider<IInstallableUnit>() {
+        @Override
         public List<IInstallableUnit> listIUs(final URI location) {
           List<IInstallableUnit> _xifexpression = null;
           String _string = location.toString();
@@ -175,6 +176,7 @@ public class TestTargetGeneration {
       final TargetPlatform tp1 = this.parser.parse(_builder);
       final ResolvedTargetPlatform resolvedTargetPlatform = ResolvedTargetPlatform.create(tp1, this.indexBuilder);
       MockMetadataRepositoryManager _mockMetadataRepositoryManager = new MockMetadataRepositoryManager(new IQueryResultProvider<IInstallableUnit>() {
+        @Override
         public List<IInstallableUnit> listIUs(final URI location) {
           List<IInstallableUnit> ret = null;
           String _string = location.toString();
@@ -261,6 +263,7 @@ public class TestTargetGeneration {
       final TargetPlatform tp1 = this.parser.parse(_builder);
       final ResolvedTargetPlatform resolvedTargetPlatform = ResolvedTargetPlatform.create(tp1, this.indexBuilder);
       MockMetadataRepositoryManager _mockMetadataRepositoryManager = new MockMetadataRepositoryManager(new IQueryResultProvider<IInstallableUnit>() {
+        @Override
         public List<IInstallableUnit> listIUs(final URI location) {
           List<IInstallableUnit> ret = null;
           String _string = location.toString();
@@ -358,6 +361,7 @@ public class TestTargetGeneration {
       final TargetPlatform tp1 = this.parser.parse(_builder);
       final ResolvedTargetPlatform resolvedTargetPlatform = ResolvedTargetPlatform.create(tp1, this.indexBuilder);
       MockMetadataRepositoryManager _mockMetadataRepositoryManager = new MockMetadataRepositoryManager(new IQueryResultProvider<IInstallableUnit>() {
+        @Override
         public List<IInstallableUnit> listIUs(final URI location) {
           List<IInstallableUnit> _xifexpression = null;
           String _string = location.toString();
@@ -432,6 +436,7 @@ public class TestTargetGeneration {
       final TargetPlatform tp1 = this.parser.parse(_builder);
       final ResolvedTargetPlatform resolvedTargetPlatform = ResolvedTargetPlatform.create(tp1, this.indexBuilder);
       MockMetadataRepositoryManager _mockMetadataRepositoryManager = new MockMetadataRepositoryManager(new IQueryResultProvider<IInstallableUnit>() {
+        @Override
         public List<IInstallableUnit> listIUs(final URI location) {
           List<IInstallableUnit> _xifexpression = null;
           String _string = location.toString();
@@ -506,6 +511,7 @@ public class TestTargetGeneration {
       final TargetPlatform tp1 = this.parser.parse(_builder);
       final ResolvedTargetPlatform resolvedTargetPlatform = ResolvedTargetPlatform.create(tp1, this.indexBuilder);
       MockMetadataRepositoryManager _mockMetadataRepositoryManager = new MockMetadataRepositoryManager(new IQueryResultProvider<IInstallableUnit>() {
+        @Override
         public List<IInstallableUnit> listIUs(final URI location) {
           List<IInstallableUnit> _xifexpression = null;
           String _string = location.toString();
@@ -580,6 +586,7 @@ public class TestTargetGeneration {
       final TargetPlatform tp1 = this.parser.parse(_builder);
       final ResolvedTargetPlatform resolvedTargetPlatform = ResolvedTargetPlatform.create(tp1, this.indexBuilder);
       MockMetadataRepositoryManager _mockMetadataRepositoryManager = new MockMetadataRepositoryManager(new IQueryResultProvider<IInstallableUnit>() {
+        @Override
         public List<IInstallableUnit> listIUs(final URI location) {
           List<IInstallableUnit> _xifexpression = null;
           String _string = location.toString();

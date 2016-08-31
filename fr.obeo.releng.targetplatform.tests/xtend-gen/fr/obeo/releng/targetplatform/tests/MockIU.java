@@ -45,94 +45,117 @@ public class MockIU implements IInstallableUnit {
     return new MockIU(id, version, Collections.<String, String>unmodifiableMap(CollectionLiterals.<String, String>newHashMap(_mappedTo)));
   }
   
+  @Override
   public Collection<IArtifactKey> getArtifacts() {
     throw new UnsupportedOperationException("TODO: auto-generated method stub");
   }
   
+  @Override
   public ICopyright getCopyright() {
     throw new UnsupportedOperationException("TODO: auto-generated method stub");
   }
   
+  @Override
   public ICopyright getCopyright(final String locale) {
     throw new UnsupportedOperationException("TODO: auto-generated method stub");
   }
   
+  @Override
   public IMatchExpression<IInstallableUnit> getFilter() {
     throw new UnsupportedOperationException("TODO: auto-generated method stub");
   }
   
+  @Override
   public Collection<IInstallableUnitFragment> getFragments() {
     throw new UnsupportedOperationException("TODO: auto-generated method stub");
   }
   
+  @Override
   public Collection<ILicense> getLicenses() {
     throw new UnsupportedOperationException("TODO: auto-generated method stub");
   }
   
+  @Override
   public Collection<ILicense> getLicenses(final String locale) {
     throw new UnsupportedOperationException("TODO: auto-generated method stub");
   }
   
+  @Override
   public Collection<IRequirement> getMetaRequirements() {
     throw new UnsupportedOperationException("TODO: auto-generated method stub");
   }
   
+  @Override
   public Map<String, String> getProperties() {
     return this.properties;
   }
   
+  @Override
   public String getProperty(final String key) {
     return this.properties.get(key);
   }
   
+  @Override
   public String getProperty(final String key, final String locale) {
     return this.getProperty(key);
   }
   
+  @Override
   public Collection<IProvidedCapability> getProvidedCapabilities() {
     throw new UnsupportedOperationException("TODO: auto-generated method stub");
   }
   
+  @Override
   public Collection<IRequirement> getRequirements() {
     throw new UnsupportedOperationException("TODO: auto-generated method stub");
   }
   
+  @Override
   public Collection<ITouchpointData> getTouchpointData() {
     throw new UnsupportedOperationException("TODO: auto-generated method stub");
   }
   
+  @Override
   public ITouchpointType getTouchpointType() {
     throw new UnsupportedOperationException("TODO: auto-generated method stub");
   }
   
+  @Override
   public IUpdateDescriptor getUpdateDescriptor() {
     throw new UnsupportedOperationException("TODO: auto-generated method stub");
   }
   
+  @Override
   public boolean isResolved() {
     throw new UnsupportedOperationException("TODO: auto-generated method stub");
   }
   
+  @Override
   public boolean isSingleton() {
     throw new UnsupportedOperationException("TODO: auto-generated method stub");
   }
   
+  @Override
   public boolean satisfies(final IRequirement candidate) {
     throw new UnsupportedOperationException("TODO: auto-generated method stub");
   }
   
+  @Override
   public IInstallableUnit unresolved() {
     throw new UnsupportedOperationException("TODO: auto-generated method stub");
   }
   
+  @Override
   public String getId() {
     return this.id;
   }
   
+  @Override
   public Version getVersion() {
     return this.version;
   }
   
+  @Override
   public int compareTo(final IInstallableUnit arg0) {
     throw new UnsupportedOperationException("TODO: auto-generated method stub");
   }

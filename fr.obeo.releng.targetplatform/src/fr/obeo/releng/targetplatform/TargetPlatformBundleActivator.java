@@ -13,7 +13,6 @@ package fr.obeo.releng.targetplatform;
 import java.util.Collections;
 import java.util.Map;
 
-import org.apache.log4j.Logger;
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Plugin;
 import org.eclipse.core.runtime.Status;
@@ -22,6 +21,8 @@ import org.eclipse.equinox.p2.core.IProvisioningAgentProvider;
 import org.eclipse.equinox.p2.core.ProvisionException;
 import org.osgi.framework.BundleContext;
 import org.osgi.framework.ServiceReference;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import com.google.common.collect.Maps;
 import com.google.inject.Guice;
@@ -38,9 +39,9 @@ public class TargetPlatformBundleActivator extends Plugin {
 	public static final String PLUGIN_ID = "fr.obeo.releng.targetplatform";
 	
 	public static final String TARGET_PLATFORM_LANGUAGE_NAME = "fr.obeo.releng.TargetPlatform";
-	
-	private static final Logger logger = Logger.getLogger(TargetPlatformBundleActivator.class);
-	
+		
+	private static final Logger logger = LoggerFactory.getLogger(TargetPlatformBundleActivator.class);
+
 	private static TargetPlatformBundleActivator INSTANCE;
 	
 	private Map<String, Injector> injectors;

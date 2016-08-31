@@ -20,10 +20,12 @@ public class FQNConverter extends AbstractNullSafeConverter<String> {
     this.allKeywords = _copyOf;
   }
   
+  @Override
   public String internalToValue(final String string, final INode node) {
     return string.replaceAll("[\\^\\s]", "");
   }
   
+  @Override
   public String internalToString(final String value) {
     final String[] segments = value.split("\\.");
     int _length = value.length();

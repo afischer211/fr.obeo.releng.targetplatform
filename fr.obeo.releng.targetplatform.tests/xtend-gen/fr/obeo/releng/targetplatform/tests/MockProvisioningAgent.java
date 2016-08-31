@@ -14,6 +14,7 @@ public class MockProvisioningAgent implements IProvisioningAgent {
     this.resultProvider = resultProvider;
   }
   
+  @Override
   public Object getService(final String serviceName) {
     boolean _equals = IMetadataRepositoryManager.SERVICE_NAME.equals(serviceName);
     if (_equals) {
@@ -22,12 +23,15 @@ public class MockProvisioningAgent implements IProvisioningAgent {
     return null;
   }
   
+  @Override
   public void registerService(final String serviceName, final Object service) {
   }
   
+  @Override
   public void stop() {
   }
   
+  @Override
   public void unregisterService(final String serviceName, final Object service) {
   }
 }

@@ -23,10 +23,12 @@ public class MockMetadataRepositoryManager implements IMetadataRepositoryManager
     this.resultProvider = resultProvider;
   }
   
+  @Override
   public IMetadataRepository createRepository(final URI location, final String name, final String type, final Map<String, String> properties) throws ProvisionException, OperationCanceledException {
     throw new UnsupportedOperationException("TODO: auto-generated method stub");
   }
   
+  @Override
   public IMetadataRepository loadRepository(final URI location, final IProgressMonitor monitor) throws ProvisionException, OperationCanceledException {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("mock loading \'");
@@ -43,50 +45,62 @@ public class MockMetadataRepositoryManager implements IMetadataRepositoryManager
     return new MockMetadataRepository(location, this.resultProvider);
   }
   
+  @Override
   public IMetadataRepository loadRepository(final URI location, final int flags, final IProgressMonitor monitor) throws ProvisionException, OperationCanceledException {
     throw new UnsupportedOperationException("TODO: auto-generated method stub");
   }
   
+  @Override
   public IMetadataRepository refreshRepository(final URI location, final IProgressMonitor monitor) throws ProvisionException, OperationCanceledException {
     throw new UnsupportedOperationException("TODO: auto-generated method stub");
   }
   
+  @Override
   public void addRepository(final URI location) {
     throw new UnsupportedOperationException("TODO: auto-generated method stub");
   }
   
+  @Override
   public boolean contains(final URI location) {
     throw new UnsupportedOperationException("TODO: auto-generated method stub");
   }
   
+  @Override
   public IProvisioningAgent getAgent() {
     throw new UnsupportedOperationException("TODO: auto-generated method stub");
   }
   
+  @Override
   public URI[] getKnownRepositories(final int flags) {
     throw new UnsupportedOperationException("TODO: auto-generated method stub");
   }
   
+  @Override
   public String getRepositoryProperty(final URI location, final String key) {
     throw new UnsupportedOperationException("TODO: auto-generated method stub");
   }
   
+  @Override
   public boolean isEnabled(final URI location) {
     throw new UnsupportedOperationException("TODO: auto-generated method stub");
   }
   
+  @Override
   public boolean removeRepository(final URI location) {
     throw new UnsupportedOperationException("TODO: auto-generated method stub");
   }
   
+  @Override
   public void setEnabled(final URI location, final boolean enablement) {
     throw new UnsupportedOperationException("TODO: auto-generated method stub");
   }
   
+  @Override
   public void setRepositoryProperty(final URI location, final String key, final String value) {
     throw new UnsupportedOperationException("TODO: auto-generated method stub");
   }
   
+  @Override
   public IQueryResult<IInstallableUnit> query(final IQuery<IInstallableUnit> query, final IProgressMonitor monitor) {
     throw new UnsupportedOperationException("TODO: auto-generated method stub");
   }

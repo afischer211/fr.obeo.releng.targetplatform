@@ -10,7 +10,6 @@ Bundle-ActivationPolicy: lazy
 Require-Bundle: org.eclipse.xtext;visibility:=reexport,
  org.eclipse.xtext.xbase;resolution:=optional;visibility:=reexport,
  org.eclipse.xtext.generator;resolution:=optional,
- org.apache.commons.logging;bundle-version="1.0.4";resolution:=optional,
  org.eclipse.emf.codegen.ecore;resolution:=optional,
  org.eclipse.emf.mwe.utils;resolution:=optional,
  org.eclipse.emf.mwe2.launch;resolution:=optional,
@@ -30,10 +29,10 @@ Require-Bundle: org.eclipse.xtext;visibility:=reexport,
  org.eclipse.jdt.launching,
  org.objectweb.asm;bundle-version="5.0.1",
  org.eclipse.equinox.p2.metadata.repository
-Import-Package: org.apache.log4j,
- org.eclipse.xtext.xbase.lib,
- org.osgi.framework;version="[1.5.0,2.0.0)"
-Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Import-Package: org.eclipse.xtext.xbase.lib,
+ org.osgi.framework;version="[1.5.0,2.0.0)",
+ org.slf4j;version="1.7.2"
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Export-Package: fr.obeo.releng.targetplatform,
  fr.obeo.releng.targetplatform.impl,
  fr.obeo.releng.targetplatform.conversion,
