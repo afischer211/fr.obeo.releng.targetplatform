@@ -30,6 +30,9 @@ location "http://download.eclipse.org/modeling/tmf/xtext/updates/releases/mainte
 	org.objectweb.asm.source
 }
 
+location "http://download.eclipse.org/tools/orbit/downloads/drops/R20140525021250/repository" {
+	org.slf4j.api [1.7.2,2.0.0)
+}
 // required for resolving dependencies of Xtext
 location "http://download.eclipse.org/modeling/emft/mwe/updates/releases/R201409021027/mwe/"
 location "http://download.eclipse.org/modeling/emft/mwe/updates/releases/R201409021051/mwe2lang/"
