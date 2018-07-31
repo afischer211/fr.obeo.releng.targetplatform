@@ -9,9 +9,6 @@
 -->
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <prerequisites>
-    <maven>3.0</maven>
-  </prerequisites>
   <groupId>fr.obeo.releng.targetplatform</groupId>
   <artifactId>releng.targetplatform-parent</artifactId>
   <version>2.1.1-SNAPSHOT</version>
@@ -30,8 +27,12 @@
     </license>
   </licenses>
   <properties>
-    <tycho-version>0.20.0</tycho-version>
+    <tycho-version>1.0.0</tycho-version>
     <os-jvm-flags/>
+	<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	<project.build.javaVersion>1.8</project.build.javaVersion>
+	<maven.compiler.source>${project.build.javaVersion}</maven.compiler.source>
+	<maven.compiler.target>${project.build.javaVersion}</maven.compiler.target>
   </properties>
   <modules>
     <module>../fr.obeo.releng.targetplatform</module>
@@ -91,6 +92,31 @@
           </environments>
         </configuration>
       </plugin>
+	  <plugin>
+		<groupId>org.apache.maven.plugins</groupId>
+		<artifactId>maven-enforcer-plugin</artifactId>
+		<version>3.0.0-M1</version>
+		<executions>
+			<execution>
+				<id>enforce-versions</id>
+				<goals>
+					<goal>enforce</goal>
+				</goals>
+				<configuration>
+					<rules>
+						<requireMavenVersion>
+							<level>ERROR</level>
+							<version>[3.0.0,4.0.0)</version>
+						</requireMavenVersion>
+						<requireJavaVersion>
+							<level>ERROR</level>
+							<version>[1.8.0,1.9)</version>
+						</requireJavaVersion>
+					</rules>
+				</configuration>
+			</execution>
+		</executions>
+	  </plugin>
     </plugins>
   </build>
   <profiles>
