@@ -4,3 +4,4 @@ target
 *.rej
 *.bak
 
+*org.eclipse.m2e.core.prefs
