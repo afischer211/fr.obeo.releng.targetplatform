@@ -1,10 +1,18 @@
+/**
+ * Copyright (c) 2012-2014 Obeo.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ * 
+ * Contributors:
+ *     Obeo - initial API and implementation
+ */
 package fr.obeo.releng.targetplatform.tests;
 
 import fr.obeo.releng.targetplatform.tests.IQueryResultProvider;
 import java.net.URI;
 import java.util.Collection;
-import java.util.Iterator;
-import java.util.List;
 import java.util.Map;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.IStatus;
@@ -130,8 +138,6 @@ public class MockMetadataRepository implements IMetadataRepository {
   
   @Override
   public IQueryResult<IInstallableUnit> query(final IQuery<IInstallableUnit> query, final IProgressMonitor monitor) {
-    List<IInstallableUnit> _listIUs = this.resultProvider.listIUs(this.location);
-    Iterator<IInstallableUnit> _iterator = _listIUs.iterator();
-    return query.perform(_iterator);
+    return query.perform(this.resultProvider.listIUs(this.location).iterator());
   }
 }

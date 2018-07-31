@@ -1,3 +1,13 @@
+/**
+ * Copyright (c) 2012-2014 Obeo.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ * 
+ * Contributors:
+ *     Obeo - initial API and implementation
+ */
 package fr.obeo.releng.targetplatform.tests;
 
 import fr.obeo.releng.targetplatform.tests.IQueryResultProvider;
@@ -32,13 +42,12 @@ public class MockMetadataRepositoryManager implements IMetadataRepositoryManager
   public IMetadataRepository loadRepository(final URI location, final IProgressMonitor monitor) throws ProvisionException, OperationCanceledException {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("mock loading \'");
-    _builder.append(location, "");
+    _builder.append(location);
     monitor.subTask(_builder.toString());
-    String _string = location.toString();
-    boolean _startsWith = _string.startsWith("bad");
+    boolean _startsWith = location.toString().startsWith("bad");
     if (_startsWith) {
-      String _string_1 = location.toString();
-      String _plus = ("Bad location uri \'" + _string_1);
+      String _string = location.toString();
+      String _plus = ("Bad location uri \'" + _string);
       String _plus_1 = (_plus + "\'");
       throw new ProvisionException(_plus_1);
     }

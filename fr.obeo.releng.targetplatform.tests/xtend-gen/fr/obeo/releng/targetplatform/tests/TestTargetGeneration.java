@@ -1,3 +1,13 @@
+/**
+ * Copyright (c) 2012-2014 Obeo.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ * 
+ * Contributors:
+ *     Obeo - initial API and implementation
+ */
 package fr.obeo.releng.targetplatform.tests;
 
 import com.google.common.io.Files;
@@ -41,8 +51,7 @@ public class TestTargetGeneration {
   
   @BeforeClass
   public static void beforeClass() {
-    File _createTempDir = Files.createTempDir();
-    TestTargetGeneration.tmpDir = _createTempDir;
+    TestTargetGeneration.tmpDir = Files.createTempDir();
   }
   
   @Test(expected = IllegalArgumentException.class)
@@ -77,8 +86,7 @@ public class TestTargetGeneration {
       _builder_1.newLine();
       _builder_1.append("</target>");
       _builder_1.newLine();
-      String _string = _builder_1.toString();
-      Assert.assertEquals(_string, content);
+      Assert.assertEquals(_builder_1.toString(), content);
     } catch (Throwable _e) {
       throw Exceptions.sneakyThrow(_e);
     }
@@ -104,8 +112,7 @@ public class TestTargetGeneration {
         @Override
         public List<IInstallableUnit> listIUs(final URI location) {
           List<IInstallableUnit> _xifexpression = null;
-          String _string = location.toString();
-          boolean _equals = "http://location.org/p2".equals(_string);
+          boolean _equals = "http://location.org/p2".equals(location.toString());
           if (_equals) {
             Version _createOSGi = Version.createOSGi(1, 0, 0, "thequalifier");
             MockIU _mockIU = new MockIU("an.iu", _createOSGi);
@@ -149,8 +156,7 @@ public class TestTargetGeneration {
       _builder_1.newLine();
       _builder_1.append("</target>");
       _builder_1.newLine();
-      String _string = _builder_1.toString();
-      Assert.assertEquals(_string, content);
+      Assert.assertEquals(_builder_1.toString(), content);
     } catch (Throwable _e) {
       throw Exceptions.sneakyThrow(_e);
     }
@@ -179,18 +185,15 @@ public class TestTargetGeneration {
         @Override
         public List<IInstallableUnit> listIUs(final URI location) {
           List<IInstallableUnit> ret = null;
-          String _string = location.toString();
-          boolean _equals = "http://location.org/p2".equals(_string);
+          boolean _equals = "http://location.org/p2".equals(location.toString());
           if (_equals) {
             Version _createOSGi = Version.createOSGi(1, 0, 0, "thequalifier");
             MockIU _mockIU = new MockIU("an.iu", _createOSGi);
             Version _createOSGi_1 = Version.createOSGi(1, 3, 74, null);
             MockIU _mockIU_1 = new MockIU("an.iu2", _createOSGi_1);
-            List<IInstallableUnit> _newImmutableList = CollectionLiterals.<IInstallableUnit>newImmutableList(_mockIU, _mockIU_1);
-            ret = _newImmutableList;
+            ret = CollectionLiterals.<IInstallableUnit>newImmutableList(_mockIU, _mockIU_1);
           } else {
-            List<IInstallableUnit> _emptyList = CollectionLiterals.<IInstallableUnit>emptyList();
-            ret = _emptyList;
+            ret = CollectionLiterals.<IInstallableUnit>emptyList();
           }
           return ret;
         }
@@ -231,8 +234,7 @@ public class TestTargetGeneration {
       _builder_1.newLine();
       _builder_1.append("</target>");
       _builder_1.newLine();
-      String _string = _builder_1.toString();
-      Assert.assertEquals(_string, content);
+      Assert.assertEquals(_builder_1.toString(), content);
     } catch (Throwable _e) {
       throw Exceptions.sneakyThrow(_e);
     }
@@ -266,24 +268,19 @@ public class TestTargetGeneration {
         @Override
         public List<IInstallableUnit> listIUs(final URI location) {
           List<IInstallableUnit> ret = null;
-          String _string = location.toString();
-          boolean _equals = "http://location.org/p2".equals(_string);
+          boolean _equals = "http://location.org/p2".equals(location.toString());
           if (_equals) {
             Version _createOSGi = Version.createOSGi(1, 0, 0);
             MockIU _mockIU = new MockIU("an.iu", _createOSGi);
-            List<IInstallableUnit> _newImmutableList = CollectionLiterals.<IInstallableUnit>newImmutableList(_mockIU);
-            ret = _newImmutableList;
+            ret = CollectionLiterals.<IInstallableUnit>newImmutableList(_mockIU);
           } else {
-            String _string_1 = location.toString();
-            boolean _equals_1 = "http://location2.org/p2".equals(_string_1);
+            boolean _equals_1 = "http://location2.org/p2".equals(location.toString());
             if (_equals_1) {
               Version _createOSGi_1 = Version.createOSGi(1, 3, 74, null);
               MockIU _mockIU_1 = new MockIU("an.iu2", _createOSGi_1);
-              List<IInstallableUnit> _newImmutableList_1 = CollectionLiterals.<IInstallableUnit>newImmutableList(_mockIU_1);
-              ret = _newImmutableList_1;
+              ret = CollectionLiterals.<IInstallableUnit>newImmutableList(_mockIU_1);
             } else {
-              List<IInstallableUnit> _emptyList = CollectionLiterals.<IInstallableUnit>emptyList();
-              ret = _emptyList;
+              ret = CollectionLiterals.<IInstallableUnit>emptyList();
             }
           }
           return ret;
@@ -334,8 +331,7 @@ public class TestTargetGeneration {
       _builder_1.newLine();
       _builder_1.append("</target>");
       _builder_1.newLine();
-      String _string = _builder_1.toString();
-      Assert.assertEquals(_string, content);
+      Assert.assertEquals(_builder_1.toString(), content);
     } catch (Throwable _e) {
       throw Exceptions.sneakyThrow(_e);
     }
@@ -364,8 +360,7 @@ public class TestTargetGeneration {
         @Override
         public List<IInstallableUnit> listIUs(final URI location) {
           List<IInstallableUnit> _xifexpression = null;
-          String _string = location.toString();
-          boolean _equals = "http://location.org/p2".equals(_string);
+          boolean _equals = "http://location.org/p2".equals(location.toString());
           if (_equals) {
             Version _createOSGi = Version.createOSGi(1, 0, 0, "thequalifier");
             MockIU _mockIU = new MockIU("an.iu", _createOSGi);
@@ -409,8 +404,7 @@ public class TestTargetGeneration {
       _builder_1.newLine();
       _builder_1.append("</target>");
       _builder_1.newLine();
-      String _string = _builder_1.toString();
-      Assert.assertEquals(_string, content);
+      Assert.assertEquals(_builder_1.toString(), content);
     } catch (Throwable _e) {
       throw Exceptions.sneakyThrow(_e);
     }
@@ -439,8 +433,7 @@ public class TestTargetGeneration {
         @Override
         public List<IInstallableUnit> listIUs(final URI location) {
           List<IInstallableUnit> _xifexpression = null;
-          String _string = location.toString();
-          boolean _equals = "http://location.org/p2".equals(_string);
+          boolean _equals = "http://location.org/p2".equals(location.toString());
           if (_equals) {
             Version _createOSGi = Version.createOSGi(1, 0, 0, "thequalifier");
             MockIU _mockIU = new MockIU("an.iu", _createOSGi);
@@ -484,8 +477,7 @@ public class TestTargetGeneration {
       _builder_1.newLine();
       _builder_1.append("</target>");
       _builder_1.newLine();
-      String _string = _builder_1.toString();
-      Assert.assertEquals(_string, content);
+      Assert.assertEquals(_builder_1.toString(), content);
     } catch (Throwable _e) {
       throw Exceptions.sneakyThrow(_e);
     }
@@ -514,8 +506,7 @@ public class TestTargetGeneration {
         @Override
         public List<IInstallableUnit> listIUs(final URI location) {
           List<IInstallableUnit> _xifexpression = null;
-          String _string = location.toString();
-          boolean _equals = "http://location.org/p2".equals(_string);
+          boolean _equals = "http://location.org/p2".equals(location.toString());
           if (_equals) {
             Version _createOSGi = Version.createOSGi(1, 0, 0, "thequalifier");
             MockIU _mockIU = new MockIU("an.iu", _createOSGi);
@@ -559,8 +550,7 @@ public class TestTargetGeneration {
       _builder_1.newLine();
       _builder_1.append("</target>");
       _builder_1.newLine();
-      String _string = _builder_1.toString();
-      Assert.assertEquals(_string, content);
+      Assert.assertEquals(_builder_1.toString(), content);
     } catch (Throwable _e) {
       throw Exceptions.sneakyThrow(_e);
     }
@@ -589,8 +579,7 @@ public class TestTargetGeneration {
         @Override
         public List<IInstallableUnit> listIUs(final URI location) {
           List<IInstallableUnit> _xifexpression = null;
-          String _string = location.toString();
-          boolean _equals = "http://location.org/p2".equals(_string);
+          boolean _equals = "http://location.org/p2".equals(location.toString());
           if (_equals) {
             Version _createOSGi = Version.createOSGi(1, 0, 0, "thequalifier");
             MockIU _mockIU = new MockIU("an.iu", _createOSGi);
@@ -634,8 +623,7 @@ public class TestTargetGeneration {
       _builder_1.newLine();
       _builder_1.append("</target>");
       _builder_1.newLine();
-      String _string = _builder_1.toString();
-      Assert.assertEquals(_string, content);
+      Assert.assertEquals(_builder_1.toString(), content);
     } catch (Throwable _e) {
       throw Exceptions.sneakyThrow(_e);
     }
@@ -674,8 +662,7 @@ public class TestTargetGeneration {
       _builder_1.newLine();
       _builder_1.append("</target>");
       _builder_1.newLine();
-      String _string = _builder_1.toString();
-      Assert.assertEquals(_string, content);
+      Assert.assertEquals(_builder_1.toString(), content);
     } catch (Throwable _e) {
       throw Exceptions.sneakyThrow(_e);
     }
@@ -717,8 +704,7 @@ public class TestTargetGeneration {
       _builder_1.newLine();
       _builder_1.append("</target>");
       _builder_1.newLine();
-      String _string = _builder_1.toString();
-      Assert.assertEquals(_string, content);
+      Assert.assertEquals(_builder_1.toString(), content);
     } catch (Throwable _e) {
       throw Exceptions.sneakyThrow(_e);
     }
@@ -757,8 +743,7 @@ public class TestTargetGeneration {
       _builder_1.newLine();
       _builder_1.append("</target>");
       _builder_1.newLine();
-      String _string = _builder_1.toString();
-      Assert.assertEquals(_string, content);
+      Assert.assertEquals(_builder_1.toString(), content);
     } catch (Throwable _e) {
       throw Exceptions.sneakyThrow(_e);
     }
@@ -797,8 +782,7 @@ public class TestTargetGeneration {
       _builder_1.newLine();
       _builder_1.append("</target>");
       _builder_1.newLine();
-      String _string = _builder_1.toString();
-      Assert.assertEquals(_string, content);
+      Assert.assertEquals(_builder_1.toString(), content);
     } catch (Throwable _e) {
       throw Exceptions.sneakyThrow(_e);
     }
@@ -837,8 +821,7 @@ public class TestTargetGeneration {
       _builder_1.newLine();
       _builder_1.append("</target>");
       _builder_1.newLine();
-      String _string = _builder_1.toString();
-      Assert.assertEquals(_string, content);
+      Assert.assertEquals(_builder_1.toString(), content);
     } catch (Throwable _e) {
       throw Exceptions.sneakyThrow(_e);
     }
@@ -871,8 +854,7 @@ public class TestTargetGeneration {
       _builder_1.newLine();
       _builder_1.append("</target>");
       _builder_1.newLine();
-      String _string = _builder_1.toString();
-      Assert.assertEquals(_string, content);
+      Assert.assertEquals(_builder_1.toString(), content);
     } catch (Throwable _e) {
       throw Exceptions.sneakyThrow(_e);
     }
@@ -923,8 +905,7 @@ public class TestTargetGeneration {
       _builder_1.newLine();
       _builder_1.append("</target>");
       _builder_1.newLine();
-      String _string = _builder_1.toString();
-      Assert.assertEquals(_string, content);
+      Assert.assertEquals(_builder_1.toString(), content);
     } catch (Throwable _e) {
       throw Exceptions.sneakyThrow(_e);
     }
@@ -966,8 +947,7 @@ public class TestTargetGeneration {
       _builder_1.newLine();
       _builder_1.append("</target>");
       _builder_1.newLine();
-      String _string = _builder_1.toString();
-      Assert.assertEquals(_string, content);
+      Assert.assertEquals(_builder_1.toString(), content);
     } catch (Throwable _e) {
       throw Exceptions.sneakyThrow(_e);
     }
