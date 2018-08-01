@@ -43,12 +43,12 @@ class TargetPlatformQuickfixProvider extends DefaultQuickfixProvider {
 	    "Set all options equals to this one.", "Set all options equals to this one.", null) [
 	    	element, context |
 	    	val location = element as Location
-	    	location.targetPlatform.locations.forEach[_ |
+	    	location.targetPlatform.locations.forEach[l |
 	    		val elemLoc = element as Location;
 	    		val locOptions = elemLoc.options;
-	    		if (_ != element && !Sets::symmetricDifference(locOptions.toSet, _.options.toSet).empty) {
-	    			_.options.clear
-	    			_.options.addAll(locOptions)
+	    		if (l != element && !Sets::symmetricDifference(locOptions.toSet, l.options.toSet).empty) {
+	    			l.options.clear
+	    			l.options.addAll(locOptions)
 	    		}
 	    	]
 	    ]
@@ -113,10 +113,10 @@ class TargetPlatformQuickfixProvider extends DefaultQuickfixProvider {
 	    	element, context | 
 	    		val id = (element as Location).ID;
 	    		val uri = (element as Location).uri;
-	    		if (uri != null) {
+	    		if (uri !== null) {
 	    			val location = element as Location
 		    		location.targetPlatform.locations
-		    			.filter[uri != null && uri.equals(it.uri)]
+		    			.filter[uri !== null && uri.equals(it.uri)]
 		    			.forEach[setID(id)];
 	    		}
 	    ]
@@ -132,7 +132,7 @@ class TargetPlatformQuickfixProvider extends DefaultQuickfixProvider {
 	    		val uri = issue.data.get(1);
 	    		val location = element as Location
 	    		location.targetPlatform.locations
-		    			.filter[uri != null && uri.equals(it.uri)]
+		    			.filter[uri !== null && uri.equals(it.uri)]
 		    			.forEach[setID(id)];
 	    ]
 	}
